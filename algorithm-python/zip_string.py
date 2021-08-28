@@ -33,4 +33,4 @@ def solution(s):
     return answer # answer 반환
 
 
-print(solution("aabbaccc"))
+print(solution("abcabcabcabcdededededede"))

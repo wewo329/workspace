@@ -1,0 +1,9 @@
+@charset "UTF-8";
+@import "reset.css";
+@import "component/header.css";
+@import "component/footer.css";
+
+@import "section/free.css";
+.container {
+	margin: 0 20px;
+}

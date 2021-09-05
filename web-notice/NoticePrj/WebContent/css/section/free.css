@@ -1,0 +1,44 @@
+.free-screen {
+	margin: 40px 200px 0 200px;
+	display: flex;
+	flex-direction: column;
+}
+.free-table {
+	text-align: center;
+	width: 100%;
+	margin-top: 15px;
+}
+.free-table thead th {
+	border: 1px solid #e5e5e5;
+	padding: 10px 0;
+	background: #f0ebeb;
+	font-weight: 600;
+}
+.free-table tbody td {
+	border-bottom: 1px solid #e5e5e5;
+	padding: 7px 0;
+}
+.free-table tbody td:nth-child(2) {
+	text-align: start;
+	border-left: 1px solid #e5e5e5;
+	padding-left: 10px;
+}
+.free-table tbody td a:hover {
+	color: gray;
+}
+
+.search-box {
+	align-self: flex-end;
+}
+.search-box input {
+	font-size: 17px;
+	height: 22px;
+	width: 150px;
+	padding: 0 3px 0 3px;
+	border: none;
+	border-bottom: 1px solid #e5e5e5;
+}
+.search-box input:focus-visible {
+	outline: none;
+	border-bottom: 1px solid black;
+}

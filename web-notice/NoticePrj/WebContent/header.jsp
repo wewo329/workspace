@@ -14,8 +14,8 @@
 	    </div>
 	    <div class="nav">
 	        <ul>
-	            <li><a href="index.html">Home</a></li>
-	            <li><a href="free.html">Free</a></li>
+	            <li><a href="index.jsp">Home</a></li>
+	            <li><a href="free.jsp">Free</a></li>
 	            <li><a href="#">Tech</a></li>
 	            <li><a href="#">About</a></li>
 	        </ul>

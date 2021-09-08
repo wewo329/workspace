@@ -4,6 +4,12 @@
 @import "component/footer.css";
 
 @import "section/free.css";
+@import "section/home.css";
 .container {
 	margin: 0 20px;
+}
+.screen {
+	margin: 40px 12vw 0 12vw;
+	display: flex;
+	flex-direction: column;
 }

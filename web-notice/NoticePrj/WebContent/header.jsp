@@ -8,7 +8,10 @@
 <body>
 	<header>
 	    <div class="header">
-	        <div class="logo-left"><h1>NoticeSite</h1></div>
+	        <div class="logo-left">
+	        	<h3>NoticeSite</h3>
+	        	<h1>Bunny</h1>
+	        </div>
 	        <div class="logo"><img src="images/bunny_tree.PNG"></div>
 	        <div class="logo-right"><a href="#">Log In</a></div>
 	    </div>

@@ -1,0 +1,52 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<header class="home-header">
+		<a href="home.jsp">Home</a>
+	</header>
+	<section class="join-section">
+		<form action="join" method="POST" id="join-form">
+			<table class="join-table">
+				<tr>
+					<td><label for="email">Email</label></td>
+					<td><input type="text" placeholder="Insert your email" required name="email" id="email"></td>
+					<td><input type="submit" value="중복 확인"></td>
+				</tr>
+				<tr>
+					<td><label for="pwd">Password</label></td>
+					<td><input type="text" placeholder="Insert your password" required name="pwd" id="pwd"></td>
+				</tr>
+				<tr>
+					<td><label for="pwd-check">Check Password</label></td>
+					<td><input type="text" placeholder="retry your password" required name="pwd-check" id="pwd-check"></td>
+				</tr>
+				<tr>
+					<td><label for="name">Name</label></td>
+					<td><input type="text" placeholder="Insert your name" required name="name" id="name"></td>
+				</tr>
+				<tr>
+					<td><label>Gender</label></td>
+					<td>
+						<label for="man">남자</label>
+						<input type="radio" value="1" id="man" name="gender">
+						<label for="woman">여자</label>
+						<input type="radio" value="2" id="woman" name="gender">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="button" value="회원가입">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</section>
+</body>
+</html>

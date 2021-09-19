@@ -13,7 +13,7 @@
 	        	<h1>Bunny</h1>
 	        </div>
 	        <div class="logo"><img src="images/bunny_tree.PNG"></div>
-	        <div class="logo-right"><a href="#">Log In</a></div>
+	        <div class="logo-right"><a href="login.jsp">Log In</a></div>
 	    </div>
 	    <div class="nav">
 	        <ul>

@@ -35,25 +35,56 @@
 	                    </tr>
 	                </thead>
 	                <tbody>
-					<c:forEach begin="1" end="20" varStatus="stat">
+	                <c:set var="page" value="${empty param.p ? 1: param.p }"></c:set>
+					<c:set var="startPage" value="${page-(page-1)%5}"></c:set>
+					<c:set var="endOfPage" value="${endOfPage}"></c:set>
+					<c:if test="${endOfPage - startPage le 4}">
+						<c:set var="lastPage" value="${endOfPage}"></c:set>
+					</c:if>
+					<c:if test="${endOfPage - startPage gt 4}">
+						<c:set var="lastPage" value="${startPage+4}"></c:set>
+					</c:if>
+					
+					<c:forEach var="l" items="${list }" varStatus="stat">
 						<tr class="free-notice-content">
-							<td>${stat.index}</td>
-							<td><a class="color_link__" href="#">Hello? What are you doing now?</a></td>
-							<td>Tineil</td>
-							<td>2020-01-01</td>
-							<td>3</td>
+							<td>${20*(page-1) + stat.index+1}</td>
+							<td><a class="color_link__" href="#">${l.title}</a></td>
+							<td>${l.writerName }</td>
+							<td>${l.regDate }</td>
+							<td>${l.hit }</td>
 						</tr>
 					</c:forEach>
 						<tr>
 							<td colspan="5">
-								<div  class="free-notice-nav_bar">
-									<span><a href="#"><i class="fas fa-arrow-circle-left"></i></a></span>
+								<div class="free-notice-page">
+									<span>${page} / ${endOfPage}</span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="5">
+								<div class="free-notice-nav_bar">
+								
+									<c:if test="${startPage eq 1}">
+										<span><i class="fas fa-arrow-circle-left"></i></span>
+									</c:if>
+									<c:if test="${startPage ne 1}">
+										<span><a href="freeboard?p=${startPage-1}"><i class="fas fa-arrow-circle-left"></i></a></span>
+									</c:if>
+									
 									<ul>
-										<c:forEach begin="1" end="5" varStatus="stat">
-											<li><a class="color_link__" href="#">${stat.index+10}</a></li>
+										<c:forEach begin="${startPage}" end="${lastPage}" varStatus="stat">
+											<li><a class="color_link__" href="freeboard?p=${stat.index}">${stat.index}</a></li>
 										</c:forEach>
 									</ul>
-									<span><a href="#"><i class="fas fa-arrow-circle-right"></i></a></span>
+									
+									<c:if test="${endOfPage-(endOfPage-1)%5 eq startPage}">
+										<span><i class="fas fa-arrow-circle-right"></i></span>
+									</c:if>
+									<c:if test="${endOfPage-(endOfPage-1)%5 ne startPage}">
+										<span><a href="freeboard?p=${startPage+5}"><i class="fas fa-arrow-circle-right"></i></a></span>
+									</c:if>
+									
 								</div>
 							</td>
 						</tr>

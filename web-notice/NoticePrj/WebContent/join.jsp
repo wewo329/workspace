@@ -7,6 +7,11 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
+<script charset="utf-8">
+function validation() {
+	
+}
+</script>
 <body>
 	<header class="home-header">
 		<a href="home.jsp">Home</a>
@@ -14,10 +19,15 @@
 	<section class="join-section">
 		<form action="join" method="POST" id="join-form">
 			<table class="join-table">
+				<colgroup>
+					<col width="20%">
+					<col width="80%">
+					<col width="10%">
+				</colgroup>
 				<tr>
 					<td><label for="email">Email</label></td>
 					<td><input type="text" placeholder="Insert your email" required name="email" id="email"></td>
-					<td><input type="submit" value="중복 확인"></td>
+					<td><input type="button" value="중복 확인"></td>
 				</tr>
 				<tr>
 					<td><label for="pwd">Password</label></td>
@@ -41,8 +51,8 @@
 					</td>
 				</tr>
 				<tr>
-					<td>
-						<input type="button" value="회원가입">
+					<td colspan="3" style="text-align:center;">
+						<input type="button" value="회원가입" onclick="validation()">
 					</td>
 				</tr>
 			</table>

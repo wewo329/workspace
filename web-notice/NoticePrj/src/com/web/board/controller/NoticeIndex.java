@@ -1,4 +1,4 @@
-package com.web.notice.controller;
+package com.web.board.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

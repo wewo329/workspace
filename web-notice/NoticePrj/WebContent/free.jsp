@@ -35,7 +35,7 @@
 	                    </tr>
 	                </thead>
 	                <tbody>
-					<c:forEach begin="0" end="19" varStatus="stat">
+					<c:forEach begin="1" end="20" varStatus="stat">
 						<tr class="free-notice-content">
 							<td>${stat.index}</td>
 							<td><a class="color_link__" href="#">Hello? What are you doing now?</a></td>

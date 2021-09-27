@@ -12,7 +12,7 @@
 
 <body>
     <div class="container">
-    	<jsp:include page="header.jsp"></jsp:include>
+    	<jsp:include page="/WEB-INF/view/component/header.jsp"></jsp:include>
        	<section>
             <div class="screen">
                 <div class="home-screen">
@@ -36,7 +36,7 @@
                 </div>
             </div>
         </section>
-        <jsp:include page="footer.jsp"></jsp:include>
+        <jsp:include page="/WEB-INF/view/component/footer.jsp"></jsp:include>
     </div>
 </body>
 

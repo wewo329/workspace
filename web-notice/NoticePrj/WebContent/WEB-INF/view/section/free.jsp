@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div class="container">
-		<jsp:include page="header.jsp"></jsp:include>
+		<jsp:include page="/WEB-INF/view/component/header.jsp"></jsp:include>
 		<section>
 	        <div class="screen">
 	            <div class="search-box">
@@ -54,14 +54,14 @@
 							<td>${l.hit }</td>
 						</tr>
 					</c:forEach>
-						<tr>
+						<tr style="border-bottom: none;">
 							<td colspan="5">
 								<div class="free-notice-page">
 									<span>${page} / ${endOfPage}</span>
 								</div>
 							</td>
 						</tr>
-						<tr>
+						<tr style="border-bottom: none;">
 							<td colspan="5">
 								<div class="free-notice-nav_bar">
 								
@@ -92,7 +92,7 @@
 				</table>
 			</div>
 		</section>
-		<jsp:include page="footer.jsp"></jsp:include>
+		<jsp:include page="/WEB-INF/view/component/footer.jsp"></jsp:include>
 	</div>
 </body>
 </html>

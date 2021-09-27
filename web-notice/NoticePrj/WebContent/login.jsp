@@ -13,7 +13,7 @@
 	</header>
 	<section class="login-section">
 		
-		<form action="login" method="GET" id="login-form">
+		<form action="login" method="POST" id="login-form">
 			<input type="text" placeholder="Email" required name="email">
 			<input type="password" placeholder="Password" required name="pwd">
 			<input type="submit" value="Log In">

@@ -7,11 +7,6 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
-<script charset="utf-8">
-function validation() {
-	
-}
-</script>
 <body>
 	<header class="home-header">
 		<a href="home.jsp">Home</a>
@@ -31,11 +26,11 @@ function validation() {
 				</tr>
 				<tr>
 					<td><label for="pwd">Password</label></td>
-					<td><input type="text" placeholder="Insert your password" required name="pwd" id="pwd"></td>
+					<td><input type="password" placeholder="Insert your password" required name="pwd" id="pwd"></td>
 				</tr>
 				<tr>
 					<td><label for="pwd-check">Check Password</label></td>
-					<td><input type="text" placeholder="retry your password" required name="pwd-check" id="pwd-check"></td>
+					<td><input type="password" placeholder="retry your password" required name="pwd-check" id="pwd-check"></td>
 				</tr>
 				<tr>
 					<td><label for="name">Name</label></td>

@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.web.board.model.Board;
+import com.web.dbinform.DBVO;
 
 @WebServlet("/freeboard")
 public class BoardList extends HttpServlet {
@@ -23,16 +24,18 @@ public class BoardList extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
 			// DB 연결 구문
+			DBVO db = new DBVO();
 			String sql = "select BOARD.*, USER.name from BOARD inner join USER where BOARD.uid = USER.id limit ?, ?";
 			String cntSql = "select count(*) as cnt from BOARD";
 			
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://172.30.1.30:3306/web", "web", "Cyber2020!@");
-			PreparedStatement pst = conn.prepareStatement(sql);
-			Statement st = conn.createStatement();
+			Class.forName(db.getDriver());
+			Connection conn = DriverManager.getConnection(db.getUrl(), db.getId(), db.getPwd());
+			db = null;
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			Statement stmt = conn.createStatement();
 			
 			// 마지막 페이지 구하기 
-			ResultSet cntRs = st.executeQuery(cntSql);
+			ResultSet cntRs = stmt.executeQuery(cntSql);
 			cntRs.next();
 			int cnt = cntRs.getInt("cnt");
 			int endOfPage = cnt%20 == 0 ? cnt/20: cnt/20+1;
@@ -41,9 +44,9 @@ public class BoardList extends HttpServlet {
 			int page = req.getParameter("p") != null ? Integer.parseInt(req.getParameter("p")): 1;
 			
 			// 페이지 수 기반 화면에 보여질 게시글 수
-			pst.setInt(1, 20*(page-1));
-			pst.setInt(2, 20*page);
-			ResultSet rs = pst.executeQuery();
+			pstmt.setInt(1, 20*(page-1));
+			pstmt.setInt(2, 20*page);
+			ResultSet rs = pstmt.executeQuery();
 			
 			List<Board> list = new ArrayList<Board>();
 			while(rs.next()) {
@@ -60,15 +63,15 @@ public class BoardList extends HttpServlet {
 			// DB 연결 종료
 			
 			rs.close();
-			st.close();
+			stmt.close();
 			cntRs.close();
-			pst.close();
+			pstmt.close();
 			conn.close();
 			
 			// 값 포워딩
 			req.setAttribute("list", list);
 			req.setAttribute("endOfPage", endOfPage);
-			RequestDispatcher dispatcher = req.getRequestDispatcher("free.jsp");
+			RequestDispatcher dispatcher = req.getRequestDispatcher("WEB-INF/view/section/free.jsp");
 			dispatcher.forward(req, resp);
 			
 		} catch (ClassNotFoundException | SQLException e) {

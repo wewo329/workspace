@@ -14,7 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.web.board.model.Board;
-import com.web.dbinform.DBVO;
+import com.web.dbconnect.DBConnection;
+import com.web.dbconnect.DBVO;
 
 @WebServlet("/freeboard")
 public class BoardList extends HttpServlet {
@@ -24,13 +25,10 @@ public class BoardList extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
 			// DB 연결 구문
-			DBVO db = new DBVO();
 			String sql = "select BOARD.*, USER.name from BOARD inner join USER where BOARD.uid = USER.id limit ?, ?";
 			String cntSql = "select count(*) as cnt from BOARD";
 			
-			Class.forName(db.getDriver());
-			Connection conn = DriverManager.getConnection(db.getUrl(), db.getId(), db.getPwd());
-			db = null;
+			Connection conn = DBConnection.connectDB();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			Statement stmt = conn.createStatement();
 			

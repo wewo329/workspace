@@ -9,7 +9,9 @@
 </head>
 <body>
 	<header class="home-header">
-		<a href="home.jsp">Home</a>
+		<div align="right">
+			<a href="home.jsp">Home</a>
+		</div>
 	</header>
 	<section class="login-section">
 		
@@ -17,7 +19,7 @@
 			<input type="text" placeholder="Email" required name="email">
 			<input type="password" placeholder="Password" required name="pwd">
 			<input type="submit" value="Log In">
-			<a href="join.jsp">회원가입</a>
+			<div align="right"><a href="join.jsp">회원가입</a></div>
 		</form>
 	</section>
 </body>

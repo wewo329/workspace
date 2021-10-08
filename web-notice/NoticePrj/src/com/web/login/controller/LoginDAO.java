@@ -2,7 +2,7 @@ package com.web.login.controller;
 
 import java.sql.*;
 
-import com.web.dbinform.DBVO;
+import com.web.dbconnect.DBConnection;
 import com.web.login.module.LoginDTO;
 
 public class LoginDAO {
@@ -13,10 +13,7 @@ public class LoginDAO {
 	
 	public LoginDAO() {
 		try {
-			DBVO db = new DBVO();
-			Class.forName(db.getDriver());
-			conn = DriverManager.getConnection(db.getUrl(), db.getId(), db.getPwd());
-			db = null;
+			conn = DBConnection.connectDB();
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
@@ -40,7 +37,7 @@ public class LoginDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return -2; // 오류
+		return -2; // �삤瑜�
 	}
 	
 	public LoginDTO login(String email, String pwd) {

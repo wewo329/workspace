@@ -33,8 +33,7 @@
 	cursor: pointer;
 	margin-top: 30px;
 }
-#login-form a {
-	text-align: right;
+#login-form div {
 	margin-top: 25px;
 	font-weight: bold;
 }

@@ -42,7 +42,7 @@ public class Login extends HttpServlet {
 				// 이메일 자체가 없는 경우
 				resp.sendRedirect("/login-fail.jsp?fail=" + flag);
 				break;
-			case -2:
+			case -2: // 에러가 뜬 경우
 				resp.sendRedirect("/errorpage.html");
 				break;
 			default:

@@ -1,4 +1,4 @@
-package com.web.login.controller;
+package com.web.member.controller;
 
 import java.io.IOException;
 
@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.web.login.module.LoginDTO;
+import com.web.member.module.LoginDTO;
 
 @WebServlet("/login")
 public class Login extends HttpServlet {
@@ -22,9 +22,9 @@ public class Login extends HttpServlet {
 		String pwd = req.getParameter("pwd");
 		
 		LoginDAO loginDAO = new LoginDAO();
-		int flag = loginDAO.checkUser(email, pwd);
+		int isExist = loginDAO.checkUser(email, pwd);
 		
-		switch (flag) {
+		switch (isExist) {
 			case 1:
 				// 로그인 성공!
 				LoginDTO loginDTO = loginDAO.login(email, pwd);
@@ -40,7 +40,7 @@ public class Login extends HttpServlet {
 				// 비밀번호가 틀린 경우
 			case -1:
 				// 이메일 자체가 없는 경우
-				resp.sendRedirect("/login-fail.jsp?fail=" + flag);
+				resp.sendRedirect("/login-fail.jsp?fail=" + isExist);
 				break;
 			case -2: // 에러가 뜬 경우
 				resp.sendRedirect("/errorpage.html");

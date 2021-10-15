@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.web.board.model.Board;
 import com.web.dbconnect.DBConnection;
-import com.web.dbconnect.DBVO;
 
 @WebServlet("/freeboard")
 public class BoardList extends HttpServlet {

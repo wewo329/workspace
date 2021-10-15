@@ -22,8 +22,11 @@
 				</colgroup>
 				<tr>
 					<td><label for="email">Email</label></td>
-					<td><input type="text" placeholder="Insert your email" required name="email" id="email"></td>
-					<td><input type="button" value="중복확인" onclick="unique_check()"></td>
+					<td class="email_functions">
+						<input type="text" placeholder="Insert your email" required name="email" id="email" onkeydown="">
+						<input type="button" value="중복확인" onclick="openUniqueCheck()">
+						
+					</td>
 				</tr>
 				<tr>
 					<td><label for="pwd">Password</label></td>
@@ -48,7 +51,7 @@
 				</tr>
 				<tr>
 					<td colspan="3" style="text-align:center;">
-						<input type="button" value="회원가입" onclick="valid_check()">
+						<input type="button" value="회원가입" onclick="validCheck()">
 					</td>
 				</tr>
 			</table>

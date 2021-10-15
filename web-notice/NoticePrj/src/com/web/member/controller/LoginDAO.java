@@ -1,9 +1,9 @@
-package com.web.login.controller;
+package com.web.member.controller;
 
 import java.sql.*;
 
 import com.web.dbconnect.DBConnection;
-import com.web.login.module.LoginDTO;
+import com.web.member.module.LoginDTO;
 
 public class LoginDAO {
 	

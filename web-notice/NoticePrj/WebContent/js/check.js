@@ -1,4 +1,4 @@
-function valid_check(){
+function validCheck(){
 	var email = document.getElementById("join-form").email;
 	var pwd = document.getElementById("join-form").pwd;
 	var repwd = document.getElementById("join-form").repwd;

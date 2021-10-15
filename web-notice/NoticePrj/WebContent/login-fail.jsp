@@ -19,7 +19,7 @@ function Request(){
 	this.getParameter = function(param){
         //현재 주소를 decoding
         var url = unescape(location.href); 
-        //파라미터만 자르고, 다시 &그분자를 잘라서 배열에 넣는다. 
+        //파라미터만 자르고, 다시 &구분자를 잘라서 배열에 넣는다. 
         var paramArr = (url.substring(url.indexOf("?")+1,url.length)).split("&"); 
         
         for(var i = 0 ; i < paramArr.length ; i++){

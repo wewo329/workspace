@@ -1,4 +1,4 @@
-package com.web.login.module;
+package com.web.member.module;
 
 import java.util.Date;
 
